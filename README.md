@@ -9,20 +9,21 @@ aleatorio entre 1 y 100. Deben tener en cuenta la tentativa anterior, si fue
 ![Demostración animada de sesión de juego](https://firebasestorage.googleapis.com/v0/b/laboratoria-945ea.appspot.com/o/guess-the-number-demo.gif?alt=media)
 
 
-**`Elementos del juego´**
-_ player 1
+**Elementos del juego**
+
+- player 1
 - Computadora
 - Numero aleatorio con random
-- Random que virifca y guarda dos numeros para crear el limite de consulta segun elRango que computadora indique
+- Random que virifca y guarda dos numeros para crear el limite de consulta segun el Rango que computadora indique
 
-**`En este proyecto trabaje todo desde una solo archivo Python ya que lo veo mas practico, la distribucion fue la siguiente:´**
+**En este proyecto trabaje todo desde una solo archivo Python ya que lo veo mas practico, la distribucion fue la siguiente:**
 - Main.py : en este archivo cree la importacion de dos librerias una llamada random y la otra llamada time (manejo y usos se los dejare abajo)
 - El objetivo principal era crear una variable Random que creara un numero aleatorio para que pueda ser adivinado. 
-- Llegamos a la creacion de una funcion llamada  <span style="color: red;">Comparation_result</span> con su argumento **consult**, 
+- Llegamos a la creacion de una funcion llamada  **Comparation_result** con su argumento **consult**, 
 este esta verifica si el numero que generamos en random es mayor o menor.
 
 **Ìngresamos al area del **Ciclo o Bucle**
- _ En el bucle verificamos con un input el ingreso del valor de uno de los jugadores `player´ una vez tengamos el numero de `player´
+ - En el bucle verificamos con un input el ingreso del valor de uno de los jugadores **player** una vez tengamos el numero de **player**
  lo comparamos con :
  - Numero correcto.
  - Numero mernor.
@@ -36,8 +37,8 @@ este esta verifica si el numero que generamos en random es mayor o menor.
 
 **Utilizo  la funcion **time.sleep(1)** para pausar la ejecucion 1 segundo , esto lo hago para tener una mejor experiencia en el juego.**
 
-**`Ingresando al modo Hacker´**
-- en esta seccion transformamos la interaccion de **`computadora_numero´** con la creacion de un random.randint(MIN_NUM, MAX_NUM) que guarde el ultimo valor de dicha variable bien sea por arriba o por abajo del numero random principal, esto genera un nuevo rango con el cual aseguramos que **computadora_numero´** tenga una "ventaja" y aseguremos menor rango de numeros repetidos.
+**Ingresando al modo Hacker**
+- en esta seccion transformamos la interaccion de **computadora_numero** con la creacion de un random.randint(MIN_NUM, MAX_NUM) que guarde el ultimo valor de dicha variable bien sea por arriba o por abajo del numero random principal, esto genera un nuevo rango con el cual aseguramos que **computadora_numero** tenga una "ventaja" y aseguremos menor rango de numeros repetidos.
 
   <details><summary>Links de Consulta </summary><p>
 
