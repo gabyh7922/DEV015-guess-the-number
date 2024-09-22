@@ -22,13 +22,13 @@ aleatorio entre 1 y 100. Deben tener en cuenta la tentativa anterior, si fue
 - Llegamos a la creacion de una funcion llamada  **Comparation_result** con su argumento **consult**, 
 este esta verifica si el numero que generamos en random es mayor o menor.
 
-**Ìngresamos al area del **Ciclo o Bucle**
+**Ìngresamos al area del** **Ciclo o Bucle**
  - En el bucle verificamos con un input el ingreso del valor de uno de los jugadores **player** una vez tengamos el numero de **player**
  lo comparamos con :
  - Numero correcto.
  - Numero mernor.
  - Numero mayor.
- **Creamos una variable llamada **`computadora_numero´** donde con un random genera su numero para ser comparado y lograr la interaccion de player y "computadora"**
+ **Creamos una variable llamada **computadora_numero** donde con un random genera su numero para ser comparado y lograr la interaccion de player y "computadora"**
  donde dicho numero es tambien verificado con:
   - Numero correcto.
   - Numero mernor.
