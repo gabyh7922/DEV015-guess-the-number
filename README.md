@@ -1,107 +1,50 @@
 # Adivina el Número - Guess the Number
 
-## Índice
-
-- [1. Resumen del Proyecto](#1-resumen-del-proyecto)
-- [2. Consideraciones Generales](#2-consideraciones-generales)
-- [3. Objetivos de Aprendizaje](#3-objetivos-de-aprendizaje)
-
----
-
-![GUESS THE
-NUMBER](https://firebasestorage.googleapis.com/v0/b/laboratoria-945ea.appspot.com/o/guess-the-number.png?alt=media)
-
 ## 1. Resumen del Proyecto
 
 _Guess The Number_ es un juego interactivo que se desarrolla en el terminal,
 donde la jugadora y el ordenador se turnan para intentar adivinar un número
 aleatorio entre 1 y 100. Deben tener en cuenta la tentativa anterior, si fue
 "muy alta" o "muy baja".
-
 ![Demostración animada de sesión de juego](https://firebasestorage.googleapis.com/v0/b/laboratoria-945ea.appspot.com/o/guess-the-number-demo.gif?alt=media)
 
-## 2. Consideraciones Generales
 
-- Este proyecto debe desarrollarse de manera **individual**.
-- La estimación de tiempo para completar el proyecto es de 1 a 2 Sprints.
-- Concéntrate en adquirir conocimientos en lugar de simplemente "terminar" el
-  proyecto.
-- Ten paciencia. No te preocupes demasiado por lo que aún no entiendes
-  completamente.
-- Tu aprendizaje se desarrollará a medida que progreses.
+**Elementos del juego**
 
-### **Criterios de Aceptación Mínimos del Proyecto**
+- player 1
+- Computadora
+- Numero aleatorio con random
+- Random que virifca y guarda dos numeros para crear el limite de consulta segun el Rango que computadora indique
 
-- La jugadora y el ordenador se turnarán en turnos para intentar adivinar el
-  número.
-- Después de cada tentativa, se debe mostrar:
-  * El nombre del jugador (persona o computadora).
-  * La suposición realizada.
-  * Un mensaje indicando si la suposición fue muy alta, muy baja o correcta.
-- El juego terminará tan pronto como la jugadora o el ordenador adivine el
-  número secreto. Debe mostrarse un mensaje de fin de juego, así como una lista
-  de todas las tentativas realizadas por la jugadora ganadora.
+**En este proyecto trabaje todo desde una solo archivo Python ya que lo veo mas practico, la distribucion fue la siguiente:**
+- Main.py : en este archivo cree la importacion de dos librerias una llamada random y la otra llamada time (manejo y usos se los dejare abajo)
+- El objetivo principal era crear una variable Random que creara un numero aleatorio para que pueda ser adivinado. 
+- Llegamos a la creacion de una funcion llamada  **Comparation_result** con su argumento **consult**, 
+este esta verifica si el numero que generamos en random es mayor o menor.
 
-**_¡Diviértete construyendo tu juego de adivinanza de números! 🎲🎮_**
+**Ìngresamos al area del** **Ciclo o Bucle**
+ - En el bucle verificamos con un input el ingreso del valor de uno de los jugadores **player** una vez tengamos el numero de **player**
+ lo comparamos con :
+ - Numero correcto.
+ - Numero mernor.
+ - Numero mayor.
+ **Creamos una variable llamada **computadora_numero** donde con un random genera su numero para ser comparado y lograr la interaccion de player y "computadora"**
+ donde dicho numero es tambien verificado con:
+  - Numero correcto.
+  - Numero mernor.
+  - Numero mayor.
+  **En este while utilizamos la declaracion break para romper el ciclo y no crear ciclos infinitos o con errores que dificulten el proceso del while.**
 
-- [Versión en Python](./docs/README-python.md)
-- [Versión en Java](./docs/README-java.md)
-- [Versión en C#](./docs/README-csharp.md)
+**Utilizo  la funcion **time.sleep(1)** para pausar la ejecucion 1 segundo , esto lo hago para tener una mejor experiencia en el juego.**
 
-## 3. Objetivos de Aprendizaje
+**Ingresando al modo Hacker**
+- en esta seccion transformamos la interaccion de **computadora_numero** con la creacion de un random.randint(MIN_NUM, MAX_NUM) que guarde el ultimo valor de dicha variable bien sea por arriba o por abajo del numero random principal, esto genera un nuevo rango con el cual aseguramos que **computadora_numero** tenga una "ventaja" y aseguremos menor rango de numeros repetidos.
 
+  <details><summary>Links de Consulta </summary><p>
 
-Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en tu proyecto. Piensa en eso al decidir tu estrategia de trabajo.
-
-### Java
-
-- [ ] **Modificadores de acesso (public, private, protected)**
-
-- [ ] **Uso de condicionales**
-
-- [ ] **Uso de bucles (Loops)**
-
-#### Tipos de data
-
-- [ ] **Datos primitivos vs no primitivos**
-
-- [ ] **Cadenas**
-
-- [ ] **Arreglos**
-
-#### Colecciones
-
-- [ ] **ArrayList**
-
-#### Testing
-
-- [ ] **JUnit**
-
-- [ ] **Mockito**
-
-### Programación Orientada a Objetos (OOP)
-
-- [ ] **Clases**
-
-- [ ] **Objetos**
-
-- [ ] **Métodos**
-
-- [ ] **Atributos**
-
-- [ ] **Constructores**
-
-- [ ] **Encapsulamiento**
-
-- [ ] **Abstracción**
-
-- [ ] **Composición**
-
-- [ ] **Interfaces**
-
-- [ ] **Herencia (super, extends, override)**
-
-- [ ] **Lenguaje de Modelado Unificado (UML, class diagrams)**
+  * [MSTest V2 - GitHub](https://github.com/microsoft/testfx?tab=readme-ov-file)
+  * [Prueba unitaria de C# con MSTest y .NET](https://learn.microsoft.com/es-es/dotnet/core/testing/unit-testing-with-mstest)
+</p></details>
 
 ### Python
 
@@ -384,20 +327,4 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   * [Prueba unitaria de C# con MSTest y .NET](https://learn.microsoft.com/es-es/dotnet/core/testing/unit-testing-with-mstest)
 </p></details>
 
-### Control de Versiones (Git y GitHub)
 
-#### Git
-
-- [ ] **Git: Instalación y configuración**
-
-- [ ] **Git: Control de versiones con git (init, clone, add, commit, status, push, pull, remote)**
-
-- [ ] **Git: Integración de cambios entre ramas (branch, checkout, fetch, merge, reset, rebase, tag)**
-
-#### GitHub
-
-- [ ] **GitHub: Creación de cuenta y repos, configuración de llaves SSH**
-
-- [ ] **GitHub: Colaboración en Github (branches | forks | pull requests | code review | tags)**
-
-- [ ] **GitHub: Organización en Github (projects | issues | labels | milestones | releases)**
