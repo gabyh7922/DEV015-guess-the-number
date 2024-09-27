@@ -3,47 +3,32 @@
         *si es el numero romper el ciclo"""
 import random
 import time
+from utils import player_validation
 """variable mayuscula para que sea una variable global (buenas practicas)"""
 RANDOM_NUM: int = random.randint(1,101)
 MIN_NUM = 1
 MAX_NUM = 101
+COUNTER = 0
+RECORDS = []
 
 print(f"Numero a adivinar {RANDOM_NUM}")
 
-def Comparation_result(consult):
-        if (consult > RANDOM_NUM):
-                return "mayor"
-        elif (consult < RANDOM_NUM):
-                return "menor"
-        else:
-                return "winner"
-"""ciclo"""
-while True: 
-        player = int(input("Te toca jugar, por favor ingresa un numero\n"))
-        comparar = Comparation_result(player)
-        if Comparation_result(player) == "winner":
-                print("Felicidades acertaste al numero correcto")
+
+"""ciclo refactorizar """
+while True:
+        COUNTER += 1
+        result, MIN_NUM, MAX_NUM, choosen = player_validation("me", RANDOM_NUM, MIN_NUM, MAX_NUM)
+        RECORDS.append({"player": "me", "turn": COUNTER, "choosen": choosen})
+        if result == "winner":
+                print("Felicidades, ganaste!")
                 break
-        print("El numero que elegiste es menor" 
-              if comparar == "menor" 
-              else "El numero que elegiste es mayor")
-        
         time.sleep(1)
 
-        print("\nComputador jugando " + "-"*10)
-        computadora_numero = random.randint(MIN_NUM, MAX_NUM)
-        comparar_pc = Comparation_result(computadora_numero)
-        print(f"\nComputadora eligio el numero {computadora_numero}")
-        if comparar_pc == "winner":
-                print("la computadora gano")
+        result, MIN_NUM, MAX_NUM, choosen = player_validation("computadora", RANDOM_NUM, MIN_NUM, MAX_NUM)
+        RECORDS.append({"player": "computer", "turn": COUNTER, "choosen": choosen})
+        if result == "winner":
+                print("Computadora ha ganado!")
                 break
-        else :
-                if comparar_pc == "menor":
-                        print("El numero que el computador elegio es menor")
-                        MIN_NUM = computadora_numero + 1
-                else:
-                        print("El numero que el computador elegio es mayor")
-                        MAX_NUM = computadora_numero
-                print("\n")
-        print(MIN_NUM, MAX_NUM, '-'*5)
-
+        
+print(f"Juego finalizado en {COUNTER} rondas")
+print(*RECORDS, sep="\n")
