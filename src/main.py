@@ -3,6 +3,7 @@
         *si es el numero romper el ciclo"""
 import random
 import time
+from utils import comparation_result
 """variable mayuscula para que sea una variable global (buenas practicas)"""
 RANDOM_NUM: int = random.randint(1,101)
 MIN_NUM = 1
@@ -10,40 +11,34 @@ MAX_NUM = 101
 
 print(f"Numero a adivinar {RANDOM_NUM}")
 
-def Comparation_result(consult):
-        if (consult > RANDOM_NUM):
-                return "mayor"
-        elif (consult < RANDOM_NUM):
-                return "menor"
-        else:
-                return "winner"
-"""ciclo"""
+
+"""ciclo refactorizar """
 while True: 
-        player = int(input("Te toca jugar, por favor ingresa un numero\n"))
-        comparar = Comparation_result(player)
-        if Comparation_result(player) == "winner":
+        player_turn = int(input("Te toca jugar, por favor ingresa un numero\n"))
+        comparar = comparation_result(player_turn, RANDOM_NUM)
+        if comparar == "winner":
                 print("Felicidades acertaste al numero correcto")
                 break
         print("El numero que elegiste es menor" 
-              if comparar == "menor" 
+              if comparar == "menor"
               else "El numero que elegiste es mayor")
         
         time.sleep(1)
 
         print("\nComputador jugando " + "-"*10)
-        computadora_numero = random.randint(MIN_NUM, MAX_NUM)
-        comparar_pc = Comparation_result(computadora_numero)
-        print(f"\nComputadora eligio el numero {computadora_numero}")
+        computer_turn = random.randint(MIN_NUM, MAX_NUM)
+        comparar_pc = comparation_result(computer_turn, RANDOM_NUM)
+        print(f"\nComputadora eligio el numero {computer_turn}")
         if comparar_pc == "winner":
                 print("la computadora gano")
                 break
         else :
                 if comparar_pc == "menor":
                         print("El numero que el computador elegio es menor")
-                        MIN_NUM = computadora_numero + 1
+                        MIN_NUM = computer_turn + 1
                 else:
                         print("El numero que el computador elegio es mayor")
-                        MAX_NUM = computadora_numero
+                        MAX_NUM = computer_turn
                 print("\n")
         print(MIN_NUM, MAX_NUM, '-'*5)
 
